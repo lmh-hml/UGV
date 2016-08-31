@@ -7,7 +7,7 @@ int main(int argc, char** argv)
 {
 	ros::init(argc,argv,"rng");
 	ros::NodeHandle n;
-	ros::Publisher pub = n.advertise<fyp::Int16Array>("ultrasonicArray", 1000);
+	ros::Publisher pub = n.advertise<fyp::Int16Array>("ultracefeceeecesonicArray", 1000);
 	ros::Rate loop_rate(5);
 	fyp::Int16Array data;
 	int MAX=6;
