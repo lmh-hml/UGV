@@ -1,0 +1,35 @@
+<launch>
+
+	<arg name="rosaria_usb" default="/dev/ttyUSB0" doc="Set Robot's USB port, such as ttyUSB1, when calling this roslaunch" />
+	
+	<arg name="filter_on" default="0" doc="toggle signal filter" />
+
+
+<!--ULTRASONIC SENSOR, CONTROL & DATA NODES-->	
+	<group ns="Ultrasonic">	
+		
+		<node name="Joystick" pkg="joy" type="joy_node"
+		 output="screen" 
+		 launch-prefix="gnome-terminal --tab --command "/>
+	  
+		<node name="control_node" pkg="fyp" type="control" 
+		 output="screen" 
+		 launch-prefix="gnome-terminal --tab --command "/>
+		 		
+		<node  name="signal_filter" pkg="fyp" type="sigFilter2"
+		 if="$(arg filter_on)" />
+		
+	</group>
+
+
+
+<!--ROSARIA NODES-->	
+	<group ns="rosaria_ugv">
+	
+		<node name="rosaria" pkg="rosaria" type="RosAria" args="_port:=$(arg rosaria_usb)" output="screen" launch-prefix="gnome-terminal --command" />
+		
+	</group>
+	
+
+
+</launch>

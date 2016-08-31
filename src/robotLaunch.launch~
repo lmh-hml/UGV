@@ -1,0 +1,10 @@
+<launch>
+	
+	<group name="Ultrasonic">
+	
+		<node name="US_Control" pkg="FYP" type="Control" />
+		<node name="Joystick" pkg="joy" type="joy_node" />
+	
+	</group>
+
+</launch>

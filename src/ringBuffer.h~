@@ -1,0 +1,17 @@
+#ifndef RINGBUFFER_H
+#define RINGBUFFER_H
+
+#include <fyp/Int16Array.h>
+
+struct RingBuffer
+{
+
+	void* buffer;
+	int size = 0;
+	int newest, oldest;
+	
+}
+
+
+
+#endif // RINGBUFFER_H

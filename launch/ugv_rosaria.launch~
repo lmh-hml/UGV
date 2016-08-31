@@ -1,0 +1,15 @@
+<launch>
+
+<!--ROSARIA NODES-->	
+
+	<arg name="rosaria_Usb" />
+	<arg name="lat_decel" />
+
+	
+	<node name="rosaria" pkg="rosaria" type="RosAria" args="_port:=$(arg rosaria_Usb) lat_decel:=$(arg lat_decel)" 
+		output="screen" launch-prefix="gnome-terminal --command"> 
+		
+	</node>
+		
+	
+</launch>
