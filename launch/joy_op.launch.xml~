@@ -1,9 +1,0 @@
-<launch>
-
-	<node pkg="rosaria" type="RosAria" name="RosAria_node"/>
-	
-	<node pkg="fyp" type="joy_Op" name="joy_Op"/>
-
-	<node pkg="joy" type="joy_node" name="joystick"/>
-
-</launch>
