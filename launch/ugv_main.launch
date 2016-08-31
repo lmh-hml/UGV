@@ -22,7 +22,7 @@
 	
 	<!--INCLUDED FILES WHERE THE NODES ARE ACTUALLY CALLED-->
 
-	<include file="$(find fyp )/launch/ugv_sensors.launch" >
+	<include file="$(find ugv )/launch/ugv_sensors.launch" >
 		
 		<arg name="filter_on" value="$(arg filter)"/>
 		
@@ -30,10 +30,9 @@
 	
 		<arg name="arduinoUsb" value="$(arg arduino_usb)" />
 		
-	
 	</include>
 	
-	<include file="$(find fyp )/launch/ugv_rosaria.launch" >
+	<include file="$(find ugv )/launch/ugv_rosaria.launch" >
 	
 		<arg name="lat_decel" value="$(arg l_decel)"/>
 		<arg name="rosaria_Usb" value="$(arg rosaria_usb)"/>

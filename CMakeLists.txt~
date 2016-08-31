@@ -199,9 +199,6 @@ add_executable(ugvControl src/control_main.cpp src/ControlUtil.cpp src/ControlDa
 target_link_libraries(ugvControl ${catkin_LIBRARIES})
 add_dependencies( control beginner_tutorials_generate_messages_cpp ugv_gencfg)
 
-add_executable(us_rng src/rng.cpp)
-target_link_libraries(us_rng ${catkin_LIBRARIES})
-add_dependencies(us_rng beginner_tutorials_generate_messages_cpp)
 
 find_package(catkin REQUIRED COMPONENTS roslaunch)
 roslaunch_add_file_check(launch)

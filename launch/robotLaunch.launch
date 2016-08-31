@@ -12,11 +12,11 @@
 		 output="screen" 
 		 launch-prefix="gnome-terminal --tab --command "/>
 	  
-		<node name="control_node" pkg="fyp" type="control" 
+		<node name="control_node" pkg="ugv" type="control" 
 		 output="screen" 
 		 launch-prefix="gnome-terminal --tab --command "/>
 		 		
-		<node  name="signal_filter" pkg="fyp" type="sigFilter2"
+		<node  name="signal_filter" pkg="ugv" type="sigFilter2"
 		 if="$(arg filter_on)" />
 		
 	</group>

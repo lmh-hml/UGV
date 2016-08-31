@@ -1,9 +1,13 @@
 <launch> 
 
+	<arg name="namespace" value="UGV"/>
+	<arg name="FILTER_NAME" value="signalFilter"/>
+	<arg name="UGV_NAME" value="ugvControl"/>	
+	
+	
 	<arg name="filter_on"  />
 	<arg name="arduino_on"  />
 	<arg name="arduinoUsb" />
-	<arg name="namespace" value="UGV"/>
 
 <!--ULTRASONIC SENSOR, CONTROL & DATA NODES-->	
 		
@@ -11,15 +15,15 @@
 		 ns="$(arg namespace)"
 		 />
 		 
-		<node name="control_node" pkg="fyp)" 
-		type="control" ns="$(arg namespace)"
+		<node name="ugv_node" pkg="ugv" 
+		type="$(arg UGV_NAME)" ns="$(arg namespace)"
 		launch-prefix="xterm -e" output="screen">
 		
 		<remap from="ultrasonicArray" to="filteredArray"
 		 if="$(arg filter_on)" />
 		</node>	
 			
-		<node  name="signal_filter" pkg="fyp" type="sigFilter2"
+		<node  name="signal_filter" pkg="ugv" type="$(arg FILTER_NAME)"
 		 ns="$(arg namespace)"
 		 if="$(arg filter_on)" 
 		 />
