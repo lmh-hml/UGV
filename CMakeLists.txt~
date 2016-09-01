@@ -10,6 +10,7 @@ find_package(catkin REQUIRED COMPONENTS
   std_msgs
   message_generation
   dynamic_reconfigure
+  roslaunch
 )
 
 ## System dependencies are found with CMake's conventions
@@ -193,12 +194,14 @@ set(CMAKE_CXX_FLAGS "-std=c++0x ${CMAKE_CXX_FLAGS}")
 
 add_executable(signalFilter src/sig_filter2.cpp)
 target_link_libraries(signalFilter ${catkin_LIBRARIES})
-add_dependencies(sigFilter2 beginner_tutorials_generate_messages_cpp)
+add_dependencies(sigFilter2 ugv_generate_messages_cpp)
 
 add_executable(ugvControl src/control_main.cpp src/ControlUtil.cpp src/ControlData.cpp)
 target_link_libraries(ugvControl ${catkin_LIBRARIES})
-add_dependencies( control beginner_tutorials_generate_messages_cpp ugv_gencfg)
+add_dependencies( ugvControl ugv_generate_messages_cpp ugv_gencfg)
 
+add_executable(ugv src/UGV_main.cpp src/UGVUtil.cpp src/UGVData.cpp)
+target_link_libraries(ugv ${catkin_LIBRARIES})
+add_dependencies(ugv ugv_generate_messages_cpp ugv_gencfg)
 
-find_package(catkin REQUIRED COMPONENTS roslaunch)
 roslaunch_add_file_check(launch)
