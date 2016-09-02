@@ -196,10 +196,6 @@ add_executable(signalFilter src/sig_filter2.cpp)
 target_link_libraries(signalFilter ${catkin_LIBRARIES})
 add_dependencies(signalFilter ugv_generate_messages_cpp)
 
-add_executable(ugvControl src/control_main.cpp src/ControlUtil.cpp src/ControlData.cpp)
-target_link_libraries(ugvControl ${catkin_LIBRARIES})
-add_dependencies( ugvControl ugv_generate_messages_cpp ugv_gencfg)
-
 add_executable(ugv src/UGV_main.cpp src/UGVUtil.cpp src/UGVData.cpp)
 target_link_libraries(ugv ${catkin_LIBRARIES})
 add_dependencies(ugv ugv_generate_messages_cpp ugv_gencfg)

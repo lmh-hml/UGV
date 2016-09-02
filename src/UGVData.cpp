@@ -1,7 +1,7 @@
-#ifndef CONTROLUTIL_H
-#define CONTROLUTIL_H
+#ifndef UGVDATA_H
+#define UGVDATA_H
 
-#include "Control.h"
+#include "UGV.h"
 
 /*
 	24/8/16: this file defines the data collection and publishing functions.

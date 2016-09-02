@@ -1,7 +1,7 @@
-#ifndef CONTROLUTIL_H
-#define CONTROLUTIL_H
+#ifndef UGVTIL_H
+#define UGVTIL_H
 
-#include "Control.h"
+#include "UGV.h"
 
 /*
 	24/8/16: this file defines the data processing and update functions.

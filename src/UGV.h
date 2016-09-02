@@ -12,6 +12,7 @@
 */
 
 enum Joystick { LeftRight = 0, ToFro, Turn, Lever, SmallLeftRight, SmallToFro };
+enum Controller{ RightX=0, RightY, LeftX, LeftY, DpadX, DpadY};
 enum Sensors  { FrLeft=0, Front , FrRight, BkRight, Back, BkLeft, Total };
 enum MoveState { Still=0, Forward,Backward, Turning,ClockWise, AntiClockWise};
 
