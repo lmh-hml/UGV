@@ -2,7 +2,7 @@
 
 	<arg name="namespace" value="UGV"/>
 	<arg name="FILTER_NAME" value="signalFilter"/>
-	<arg name="UGV_NAME" value="ugvControl"/>	
+	<arg name="UGV_NAME" value="ugv"/>	
 	
 	
 	<arg name="filter_on"  />

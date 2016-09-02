@@ -42,10 +42,21 @@ MoveState Control::getDirection(float joy_lx, float joy_az)
 //The update. It's a state machine!
 void Control::Update()
 {
-	ROS_INFO("Updatng");
 	
 	moveState = getDirection(joy_lx, joy_az);
+
+	ROS_INFO("\n\n"
+		"MAX_DIST|MIN_DIST|MIN_SIDES\n"
+		"%d        %d       %d     \n"
+		"FR:  %d            %d,%d  \n"
+		"BK:  %d            %d,%d  \n"
+		"SR:  Mid        Left,Right\n",
+
 	
+		MAX_DIST, MIN_DIST, MIN_SIDES,
+		sensor[FrLeft],	sensor[Front], sensor[FrRight],
+		sensor[BkLeft], sensor[Back], sensor[BkRight]
+	);
 	
 	switch( moveState )
 	{
@@ -70,6 +81,8 @@ void Control::Update()
 			break;
 	}
     publishTwist(linear,joy_lx,angular,joy_az);
+
+
 }
 
 

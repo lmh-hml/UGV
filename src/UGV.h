@@ -7,6 +7,7 @@
 #include <ugv/Int16Array.h>
 #include <dynamic_reconfigure/server.h>
 #include <ugv/ControlDistConfig.h>
+#include <stdio.h>
 
 /* 24/8/16: The node declaration
 */
@@ -54,14 +55,6 @@ class Control
 		void SonicCallBack( const ugv::Int16Array::ConstPtr& ary);
                          
 };
-
-
-
-
-
-
-
-
 
 
 #endif

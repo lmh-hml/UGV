@@ -50,7 +50,22 @@ void Control::publishTwist(float linearX, float joylinear ,float angularZ, float
      twist.angular.z= angularZ * joyAngular;
      Twist_pub.publish(twist) ;
 
-     ROS_INFO("Published state is: LX: %f, joy: %f , az: %f, joyaz: %f", linearX, joylinear, angularZ, joyAngular );
+    ROS_INFO("\n\n"
+		"MAX_DIST|MIN_DIST|MIN_SIDES\n" 
+		"%d        %d       %d     \n"
+		"FR:  %d            %d,%d  \n"  
+		"BK:  %d            %d,%d  \n"
+		"SR:  Mid        Left,Right\n"
+        "Published state is: LX: %.2f, joy: %.2f , az: %f, joyaz: %f\n"
+        "Published: linear %.2f, angular %.2f\n",
+
+	
+		MAX_DIST, MIN_DIST, MIN_SIDES,
+		sensor[FrLeft],	sensor[Front], sensor[FrRight],
+		sensor[BkLeft], sensor[Back], sensor[BkRight],
+        linearX, joylinear, angularZ, joyAngular,
+        twist.linear.x,  twist.angular.z
+    );
 }
 
 #endif
