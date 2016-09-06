@@ -50,6 +50,7 @@ class Control
         void dynamicReconfig(ugv::ControlDistConfig &config, uint32_t level );
         void publishTwist(float linearX, float joylinear ,float 	angularZ, 
         				  float joyAngular);
+        void shutDown(int sig);	  
     private:
 
 		void JoyCallBack(const sensor_msgs::Joy::ConstPtr& joy);

@@ -34,7 +34,7 @@ SigFilter::SigFilter():oldest(0), newest(0),size(0), MAX(10){
 }
 
 void SigFilter::collectArray(const ugv::Int16Array::ConstPtr& array)
-{    
+{
     insertData(*array);
 }
 
@@ -65,7 +65,7 @@ void SigFilter::removeData()
 
 ugv::Int16Array SigFilter::filter()
 {
-    ugv::Int16Array toReturn; 
+    ugv::Int16Array toReturn;
 
     int dividend = buffer.size(); //the dividing number for average
 
@@ -79,8 +79,8 @@ ugv::Int16Array SigFilter::filter()
         temp[0] += buffer[count].data[0];
         temp[1] += buffer[count].data[1];
         temp[2] += buffer[count].data[2];
-	
-	
+
+
         ROS_INFO("during additon: (+ %d) %d", buffer[count].data[1],temp[1]);
     }
 

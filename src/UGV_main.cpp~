@@ -4,7 +4,7 @@
 24/8/16: split up class into Control.h, Controlutil.cpp & ControlData.cpp
  */
  bool alive;
-void kill(int sig);
+void shutDown(int sig);
 
 int main(int argc, char** argv)
 {
@@ -14,7 +14,7 @@ int main(int argc, char** argv)
 	Control jc;
     ros::Rate hertz(20);
     jc.publishTwist(0,0,0,0);
-    signal(SIGINT, kill);
+    signal(SIGINT, shutDown);
  
     do{
         jc.Update();
@@ -29,7 +29,7 @@ int main(int argc, char** argv)
     
 };
 
-void kill(int sig)
+void shutDown(int sig)
 {
 	alive=false;
 }

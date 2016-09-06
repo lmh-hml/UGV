@@ -74,6 +74,12 @@ void Control::Update()
 
 }
 
+void Control::shutDown(int sig)
+{
+	ROS_INFO("Node SHUTDOWN:");
+	publishTwist(0,0,0,0);
+
+}
 
 
 

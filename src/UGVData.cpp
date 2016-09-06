@@ -61,8 +61,8 @@ void Control::publishTwist(float linearX, float joylinear ,float angularZ, float
 
 	
 		MAX_DIST, MIN_DIST, MIN_SIDES,
-		sensor[FrLeft],	sensor[Front], sensor[FrRight],
-		sensor[BkLeft], sensor[Back], sensor[BkRight],
+		sensor[Front],	sensor[FrLeft], sensor[FrRight],
+		sensor[Back], sensor[BkLeft], sensor[BkRight],
         linearX, joylinear, angularZ, joyAngular,
         twist.linear.x,  twist.angular.z
     );
