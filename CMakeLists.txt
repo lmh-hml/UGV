@@ -204,7 +204,7 @@ add_executable(sensorNode src/SensorNode.cpp)
 target_link_libraries(sensorNode ${catkin_LIBRARIES})
 add_dependencies(ugv ugv_generate_messages_cpp)
 
-add_executable(curse src/curse.cpp)
+add_executable(curse src/curse.cpp src/CurseNode.cpp)
 target_link_libraries(curse ${catkin_LIBRARIES} ncurses)
 add_dependencies(curse ugv_generate_messages_cpp)
 
